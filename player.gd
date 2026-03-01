@@ -4,7 +4,10 @@ extends CharacterBody2D
 const SPEED = 600.0
 const JUMP_VELOCITY = -850.0
 
-
+var current_level = 1
+const spawnpoints = {
+	"level1" = [-71, -350]
+}
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -23,3 +26,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	if position.y > 2000:
+		position.x = spawnpoints["level" + str(current_level)][0]
+		position.y = spawnpoints["level" + str(current_level)][1] - 1500
