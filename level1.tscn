@@ -1,9 +1,7 @@
 [gd_scene format=4 uid="uid://ropfgo7ogu0l"]
 
 [ext_resource type="Texture2D" uid="uid://0ja7r805jgke" path="res://assets/tilemap.png" id="1_epypp"]
-[ext_resource type="Script" uid="uid://v581drrdxi55" path="res://player.gd" id="2_0hol4"]
-[ext_resource type="Texture2D" uid="uid://buiy5yxacn50m" path="res://assets/player.png" id="3_0hol4"]
-[ext_resource type="Texture2D" uid="uid://c1vowmmjjdyjm" path="res://assets/backdrop.png" id="4_0hol4"]
+[ext_resource type="PackedScene" uid="uid://mlff8q0sxgdk" path="res://player.tscn" id="2_dopym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("1_epypp")
@@ -70,19 +68,6 @@ tile_size = Vector2i(160, 160)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_0hol4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
-size = Vector2(123, 123)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hol4"]
-bg_color = Color(0.14509805, 0.101960786, 0.28627452, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6r6c"]
-bg_color = Color(0.44589895, 0.59083176, 0.9101882, 1)
-
 [node name="Node2D" type="Node2D" unique_id=84849984]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=996487525]
@@ -90,31 +75,4 @@ position = Vector2(77, 349)
 tile_map_data = PackedByteArray("AAD7////AQAAAAIAAAD8////AQABAAIAAAD9//7/AQABAAAAAAD9////AQABAAIAAAD+//7/AQABAAAAAAD+////AQABAAIAAAABAP//AQABAAIAAAACAP7/AQABAAAAAAACAP//AQABAAIAAAADAP7/AQABAAAAAAADAP//AQABAAIAAAAEAP7/AQABAAAAAAAEAP//AQABAAIAAAAFAP7/AQABAAAAAAAFAP//AQABAAIAAAAGAP7/AQACAAAAAAD///7/AQABAAAAAAD/////AQABAAIAAAAAAP7/AQABAAAAAAAAAP//AQABAAIAAAABAP7/AQABAAAAAAAMAPz/AQABAAAAAAANAPz/AQABAAAAAAAOAPz/AQACAAAAAAAQAPr/AQAAAAIAAAARAPr/AQABAAIAAAASAPr/AQABAAIAAAATAPr/AQAEAAMAAAAUAPr/AQACAAMAAAAfAPL/AQADAAQAAAAgAPH/AQADAAIAAAAhAPH/AQAEAAEAAAAhAPL/AQAAAAEAAAAhAPP/AQAAAAEAAAAhAPT/AQAAAAEAAAAhAPX/AQABAAQAAAAiAPH/AQACAAAAAAAiAPL/AQACAAEAAAAiAPP/AQACAAEAAAAiAPT/AQACAAEAAAAiAPX/AQACAAEAAAAdAPX/AQABAAAAAAAdAPb/AQABAAIAAAAeAPX/AQABAAAAAAAeAPb/AQABAAIAAAAfAPX/AQABAAAAAAAfAPb/AQABAAIAAAAgAPX/AQABAAAAAAAgAPb/AQABAAIAAAAhAPb/AQABAAIAAAAiAPb/AQACAAIAAAAcAPb/AQAEAAIAAAAtAP//AQADAAIAAAAuAP//AQACAAMAAAAhAO7/AQADAAIAAAAiAO7/AQACAAMAAAAjAO7/AQACAAMAAAAkAO7/AQACAAMAAAAlAO7/AQACAAMAAAAmAO7/AQAFAAAAAAAmAO//AQACAAQAAAAmAPD/AQACAAQAAAAmAPH/AQACAAQAAAAmAPL/AQACAAQAAAAmAPP/AQACAAQAAAAmAPT/AQACAAQAAAAmAPX/AQACAAQAAAAmAPb/AQADAAEAAAAqAPf/AQADAAIAAAArAPf/AQACAAMAAAAsAPf/AQACAAMAAAAtAPf/AQAFAAAAAAAtAPj/AQACAAQAAAAtAPn/AQACAAQAAAAtAPr/AQADAAEAAAAvAP//AQACAAMAAAAwAP//AQADAAMAAAD7//7/AQAAAAAAAAD8//7/AQABAAAAAAAIAPz/AQAAAAAAAAAIAP3/AQAAAAIAAAAJAPz/AQABAAAAAAAKAPz/AQABAAAAAAALAPz/AQABAAAAAAAJAP3/AQABAAIAAAALAP3/AQABAAIAAAAMAP3/AQABAAIAAAANAP3/AQABAAIAAAAQAPn/AQAAAAAAAAAGAP//AQACAAIAAAAOAP3/AQACAAIAAAARAPn/AQABAAAAAAATAPn/AQACAAAAAAASAPn/AQABAAAAAAAVAPr/AQADAAMAAAATAPf/AQADAAQAAAAUAPb/AQADAAQAAAAYAPT/AQADAAQAAAAWAPT/AQADAAQAAAAVAPX/AQADAAQAAAAbAPb/AQADAAIAAAAdAPP/AQADAAQAAAAKAP3/AQABAAIAAAANAPr/AQADAAQAAAAfAO//AQADAAQAAAAnAPz/AQAAAAAAAAAnAP3/AQAAAAIAAAAoAPz/AQACAAAAAAAoAP3/AQACAAIAAAAcAPX/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_d21ai")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=1476540088]
-position = Vector2(-71, -350)
-script = ExtResource("2_0hol4")
-
-[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=517119106]
-texture = ExtResource("3_0hol4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1968550446]
-shape = SubResource("RectangleShape2D_rj586")
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1630591939]
-zoom = Vector2(0.5, 0.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="player/Camera2D" unique_id=1100104141]
-visible = false
-z_index = -4096
-scale = Vector2(2, 2)
-texture = ExtResource("4_0hol4")
-
-[node name="ProgressBar" type="ProgressBar" parent="player/Camera2D" unique_id=1941212339]
-offset_left = -1152.0
-offset_top = -648.0
-offset_right = 3.0
-offset_bottom = -578.0
-theme_override_styles/background = SubResource("StyleBoxFlat_0hol4")
-theme_override_styles/fill = SubResource("StyleBoxFlat_q6r6c")
-value = 60.0
-show_percentage = false
+[node name="Player" parent="." unique_id=1258381044 instance=ExtResource("2_dopym")]

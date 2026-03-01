@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://mlff8q0sxgdk"]
+
+[ext_resource type="Script" uid="uid://v581drrdxi55" path="res://player.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://buiy5yxacn50m" path="res://assets/player.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://c1vowmmjjdyjm" path="res://assets/backdrop.png" id="3_sweqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
+size = Vector2(92, 118)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jxqw"]
+bg_color = Color(0.14509805, 0.101960786, 0.28627452, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw050"]
+bg_color = Color(0.44589895, 0.59083176, 0.9101882, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="Player" type="Node2D" unique_id=1258381044]
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1387948807]
+script = ExtResource("1_i3pqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1623770723]
+texture = ExtResource("2_hqtel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=838565814]
+position = Vector2(-6, 5)
+shape = SubResource("RectangleShape2D_2hs0m")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1829567233]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="player/Camera2D" unique_id=1775293360]
+visible = false
+z_index = -4096
+scale = Vector2(2, 2)
+texture = ExtResource("3_sweqy")
+
+[node name="ProgressBar" type="ProgressBar" parent="player/Camera2D" unique_id=1518308037]
+offset_left = -1152.0
+offset_top = -648.0
+offset_right = 3.0
+offset_bottom = -578.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1jxqw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dw050")
+value = 60.0
+show_percentage = false
