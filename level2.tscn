@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0ja7r805jgke" path="res://assets/tilemap.png" id="1_8tcn8"]
 [ext_resource type="PackedScene" uid="uid://mlff8q0sxgdk" path="res://player.tscn" id="2_r40rm"]
+[ext_resource type="Texture2D" uid="uid://drbgncax23aq" path="res://assets/portal.png" id="3_6q4t8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("1_8tcn8")
@@ -77,3 +78,8 @@ tile_set = SubResource("TileSet_d21ai")
 
 [node name="Player" parent="." unique_id=1258381044 instance=ExtResource("2_r40rm")]
 position = Vector2(-108, -489)
+
+[node name="Portal" type="Sprite2D" parent="." unique_id=2035698670]
+unique_name_in_owner = true
+position = Vector2(9758, -552)
+texture = ExtResource("3_6q4t8")
