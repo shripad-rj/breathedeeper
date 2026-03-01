@@ -76,3 +76,4 @@ tile_map_data = PackedByteArray("AAD7////AQAAAAIAAAD8////AQABAAIAAAD9//7/AQABAAA
 tile_set = SubResource("TileSet_d21ai")
 
 [node name="Player" parent="." unique_id=1258381044 instance=ExtResource("2_dopym")]
+position = Vector2(-1, -53)
